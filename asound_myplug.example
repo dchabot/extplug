@@ -1,0 +1,16 @@
+pcm_type.myplug {
+    lib "/home/dc/src/fftw_testing/libasound_module_pcm_myplug.so"
+}
+
+pcm.myplug {
+    type myplug
+    my_own_parameter "some parameter string"
+    slave.pcm "plughw:0,0"
+}
+
+pcm.save {
+    type file
+    slave.pcm "null"
+    file "/tmp/output.wav"
+    format "wav"
+}
